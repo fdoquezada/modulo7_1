@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mp0$d!%kgblqb!(_2b(jm^8-t&+b+frqw5v^b7ymxg*vygwyo4'
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG", cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -77,11 +80,11 @@ WSGI_APPLICATION = 'educational_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'school',
-        'USER': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'PASSWORD': '527319'
+        'NAME' :'school',
+        'USER' : 'postgres',
+        'HOST' : 'localhost',
+        'PORT' : 5432,
+        'PASSWORD' : '527319',
     }
 }
 
