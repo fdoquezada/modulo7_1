@@ -139,16 +139,5 @@ sqlparse==0.5.3
 tzdata==2024.2
 Database
 The project uses PostgreSQL. Ensure your database is configured as shown in settings.py:
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Escuela_DB',
-        'USER': 'postgres',
-        'PASSWORD': 'admin1234',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
 License
 This project is licensed under the MIT License.
